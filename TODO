@@ -1,0 +1,41 @@
+-C00 [retry 55/100]
+Fazer correção no ex06, a números repetidos na ponta.
+Fazer o ex07 que é o ex02 do c04
+Fazer o ex08
+Por main com testes em todos
+
+-C01 [retry 65/100]
+Corrigir ex06, havia caracteres char c sem usar
+Fazer o ex07 e ex08
+
+-C02 [retry - 5/100] [eval01 - 75/100]
+ex01: KO inserir caracteres nulos ao resto da string [fixed]
+ex06: KO range de caracteres, utilizar || [fixed]
+ex09: KO range de caracteres [fixed]
+Repassar tudo na norme [ok]
+
+-C03 [retry - 10/100] [eval01 - 100/100]
+ex01: KO corrigir condicao [fixed]
+ex04: KO [fixed]
+ex05: KO funcao pois em teoria nao adiciona caractere nulo [fixed]
+Repassar tudo na norme [ok]
+
+-C04 [retry - 30/100] [eval01 - 70/100]
+ex02: KO [fixed]
+ex04 e ex05 verificar para fazer.
+
+-C05 [50/100]
+ex06 KO
+ex07 KO timeout
+ex08 falta fazer
+
+-C06 [100/100]
+
+-C07 [building]
+
+
+-C08 [soon]
+
+-C09 [soon]
+
+-C10 [soon]
