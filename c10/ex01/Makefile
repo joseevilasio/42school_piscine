@@ -1,8 +1,8 @@
-.PHONY: all ft_cat clean fclean re
+.PHONY: all $(TARGET) clean fclean re
 
 TARGET := ft_cat
 
-all:	ft_cat
+all:	$(TARGET)
 
 obj_files.o:
 	for file_source in ./srcs/*.c; do \
