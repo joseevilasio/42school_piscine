@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: josejunior <josejunior@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 20:10:21 by josejunior        #+#    #+#             */
-/*   Updated: 2024/01/17 20:59:02 by josejunior       ###   ########.fr       */
+/*   Created: 2024/01/17 20:25:03 by josejunior        #+#    #+#             */
+/*   Updated: 2024/01/17 20:42:26 by josejunior       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,25 @@
 
 int	main(int argc, char *argv[])
 {
-	char str[1000];
+	char str[30720];
+	int	i;
 	
-	if (argc == 2)
+	i = 1;
+	if (argc > 1)
 	{
-		if (ft_read(argv[1], str, 1000) == 0)
-			ft_putstr(str);
+		while (i < argc)
+		{
+			if (ft_read(argv[i], str, 30720) == 0)
+				ft_putstr(str);			
+			else
+			{
+				ft_putstr("ft_cat: ");
+				ft_putstr(argv[i]);
+				ft_putstr(": No such file or directory\n");				
+			}
+			i++;
+		}
 	}
-	else if (argc > 2)
-		ft_putstr("Too many arguments.\n");
 	else
 		ft_putstr("File name missing.\n");
 	return (0);

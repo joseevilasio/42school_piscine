@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josejunior <josejunior@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 20:10:21 by josejunior        #+#    #+#             */
-/*   Updated: 2024/01/17 20:59:02 by josejunior       ###   ########.fr       */
+/*   Created: 2023/12/20 18:31:28 by joneves-          #+#    #+#             */
+/*   Updated: 2024/01/15 16:52:37 by josejunior       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft.h"
+#include <unistd.h>
 
-int	main(int argc, char *argv[])
+void	ft_putstr(char *str)
 {
-	char str[1000];
-	
-	if (argc == 2)
+	int		index;
+
+	index = 0;
+	while (str[index] != '\0')
 	{
-		if (ft_read(argv[1], str, 1000) == 0)
-			ft_putstr(str);
+		write(1, &str[index], 1);
+		index++;
 	}
-	else if (argc > 2)
-		ft_putstr("Too many arguments.\n");
-	else
-		ft_putstr("File name missing.\n");
-	return (0);
 }
