@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josejunior <josejunior@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 20:25:03 by josejunior        #+#    #+#             */
-/*   Updated: 2024/01/18 20:15:46 by josejunior       ###   ########.fr       */
+/*   Created: 2023/12/20 18:31:28 by joneves-          #+#    #+#             */
+/*   Updated: 2024/01/15 16:52:37 by josejunior       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft.h"
-#include <string.h>
-#include <errno.h>
+#include <unistd.h>
 
-int	main(int argc, char *argv[])
+void	ft_putstr(char *str)
 {
-	char str[30720];
-	int	i;
-	
-	i = 1;
-	if (argc > 1)
+	int		index;
+
+	index = 0;
+	while (str[index] != '\0')
 	{
-		while (i < argc)
-		{
-			if (ft_read(argv[i], str, 30720) == 0)
-				ft_putstr(str);
-			else
-			{
-				ft_putstr("ft_cat: ");
-				ft_putstr(argv[i]);
-				ft_putstr(": ");
-				ft_putstr(strerror(errno));
-			}
-			i++;
-		}
+		write(1, &str[index], 1);
+		index++;
 	}
-	return (0);
 }

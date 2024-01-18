@@ -24,4 +24,4 @@ fclean:	clean
 re:	fclean all
 
 $(TARGET):	fclean libft.a
-	cc -Wall -Wextra -Werror main.c -o $(TARGET) -L./lib/ -lft
+	cc -Wall -Wextra -Werror -g main.c -o $(TARGET) -L./lib/ -lft
