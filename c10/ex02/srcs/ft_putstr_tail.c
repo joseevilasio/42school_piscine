@@ -6,7 +6,7 @@
 /*   By: josejunior <josejunior@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 18:31:28 by joneves-          #+#    #+#             */
-/*   Updated: 2024/01/21 21:09:27 by josejunior       ###   ########.fr       */
+/*   Updated: 2024/01/22 19:16:16 by josejunior       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	ft_putstr_tail(char *str, int *pt_size)
 
 	lines = 0;
 	pt_initial = str;
-	if (ft_countline(pt_initial) > 10)
+	if (*pt_size != 0)
+		ft_putnstr(str, pt_size);
+	else if (ft_countline(pt_initial) > 10)
 	{
 		while (*str != '\0')
 		{
@@ -32,10 +34,7 @@ void	ft_putstr_tail(char *str, int *pt_size)
 			}
 			str++;
 		}
-		if (*pt_size == 0)
-			ft_putstr(str);
-		else
-			write(1, ft_strdup(str), *pt_size);
+		ft_putstr(str);
 	}
 	else
 		ft_putstr(str);

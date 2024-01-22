@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_setoption_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josejunior <josejunior@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 19:56:21 by joneves-          #+#    #+#             */
-/*   Updated: 2024/01/22 18:57:22 by josejunior       ###   ########.fr       */
+/*   Created: 2024/01/22 19:20:03 by josejunior        #+#    #+#             */
+/*   Updated: 2024/01/22 19:53:04 by josejunior       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
-{
-	int	i;
+#include "../include/ft.h"
 
-	i = 0;
-	if (str[0] == '\0')
-		return (0);
-	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
-		i++;
-	while (str[i] != '\0')
+int	ft_setoption_str(char **argv, int *pt_jump, int *pt_size, int i)
+{
+	argv[i] = argv[i] + 2;
+	if (ft_str_is_numeric(argv[i]) == 1)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			i++;
-		else
-			return (0);
+		*pt_size = ft_atoi(argv[i]);
+		*pt_jump = i;
+		pt_jump++;
+		*pt_jump = 0;
 	}
-	return (1);
+	else
+	{
+		ft_msgerror(3, argv[i]);
+		return (-1);
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: josejunior <josejunior@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:25:03 by josejunior        #+#    #+#             */
-/*   Updated: 2024/01/21 21:51:53 by josejunior       ###   ########.fr       */
+/*   Updated: 2024/01/22 19:03:09 by josejunior       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ int	main(int argc, char *argv[])
 }
 
 // Resolver str is numeric, para aceitar espacos e apenas um sinal de positivo
-// quando repassado em -c size apresentar size em read
-// bytes e um caracter, entao fazer a mesma logica da linhas porem para caracter;
+// lidar com numeros negativos, ou seja nao imprimir nada
 // refactorar para ter 25 as funcoes

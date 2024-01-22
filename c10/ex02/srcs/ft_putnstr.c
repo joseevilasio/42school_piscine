@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_putnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josejunior <josejunior@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 19:56:21 by joneves-          #+#    #+#             */
-/*   Updated: 2024/01/22 18:57:22 by josejunior       ###   ########.fr       */
+/*   Created: 2023/12/20 18:31:28 by joneves-          #+#    #+#             */
+/*   Updated: 2024/01/22 18:52:24 by josejunior       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
-{
-	int	i;
+#include "../include/ft.h"
 
-	i = 0;
-	if (str[0] == '\0')
-		return (0);
-	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
-		i++;
-	while (str[i] != '\0')
+void	ft_putnstr(char *str, int *pt_size)
+{
+	int	start;
+
+	if (ft_strlen(str) <= *pt_size)
+		ft_putstr(str);
+	else
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			i++;
-		else
-			return (0);
+		start = ft_strlen(str) - *pt_size;
+		str = str + start;
+		ft_putstr(str);
 	}
-	return (1);
 }
